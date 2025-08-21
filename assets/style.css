@@ -15,3 +15,8 @@ table.pricing th, table.pricing td { border: 1px solid #ccc; padding: .75rem; te
 table.pricing th { background: #eee; }
 .small { font-size: .9rem; color: #666; }
 footer { text-align: center; padding: 2rem 0; color: #666; }
+.logo img {
+  height: 50px;
+  vertical-align: middle;
+}
+
