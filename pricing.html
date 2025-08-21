@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Pricing – QR4PPU</title>
-  <link rel="stylesheet" href="assets/styles.css">
+  <link rel="stylesheet" href="assets/styles.css" />
 </head>
 <body>
   <header>
@@ -18,30 +18,64 @@
   </header>
 
   <main class="container">
-    <h1>Pricing</h1>
-    <table class="pricing">
-      <thead>
-        <tr><th>Plan</th><th>Includes</th><th>Price</th></tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Class Pilot</td>
-          <td>1 class, 1 teacher, up to 2,000 scans/mo</td>
-          <td>$0</td>
-        </tr>
-        <tr>
-          <td>School</td>
-          <td>Unlimited teachers, dashboards, priority support</td>
-          <td>$49/mo</td>
-        </tr>
-        <tr>
-          <td>District</td>
-          <td>Multi-school reporting, custom options</td>
-          <td>Contact us</td>
-        </tr>
-      </tbody>
-    </table>
-    <p class="small">Need something custom? <a href="mailto:you@qr4ppu.com">Contact us</a>.</p>
+    <section class="pricing-hero">
+      <h1>Simple, school-friendly pricing</h1>
+      <p>No contracts for pilots. Cancel anytime.</p>
+    </section>
+
+    <section class="pricing-grid" aria-label="Pricing plans">
+      <!-- Plan 1 -->
+      <article class="price-card">
+        <header>
+          <h2 class="plan">Class Pilot</h2>
+          <p class="tagline">Try it in one class</p>
+          <p class="price"><span>$0</span> <small>/ mo</small></p>
+        </header>
+        <ul class="features">
+          <li>1 teacher, 1 class</li>
+          <li>Up to 2,000 scans / mo</li>
+          <li>Email support</li>
+        </ul>
+        <a class="btn block" href="mailto:you@qr4ppu.com?subject=QR4PPU%20Pilot%20Request">Start free</a>
+      </article>
+
+      <!-- Plan 2 (featured) -->
+      <article class="price-card featured" aria-label="Recommended plan">
+        <div class="badge">Most Popular</div>
+        <header>
+          <h2 class="plan">School</h2>
+          <p class="tagline">Everything you need</p>
+          <p class="price"><span>$49</span> <small>/ mo</small></p>
+        </header>
+        <ul class="features">
+          <li>Unlimited teachers</li>
+          <li>Dashboards & exports</li>
+          <li>Priority email support</li>
+          <li>Per-school data isolation</li>
+        </ul>
+        <a class="btn primary block" href="mailto:you@qr4ppu.com?subject=QR4PPU%20School%20Plan">Get started</a>
+      </article>
+
+      <!-- Plan 3 -->
+      <article class="price-card">
+        <header>
+          <h2 class="plan">District</h2>
+          <p class="tagline">Multi-school reporting</p>
+          <p class="price"><span>Custom</span></p>
+        </header>
+        <ul class="features">
+          <li>Multi-school analytics</li>
+          <li>SSO options</li>
+          <li>Custom retention & SLAs</li>
+          <li>Dedicated onboarding</li>
+        </ul>
+        <a class="btn block" href="mailto:you@qr4ppu.com?subject=QR4PPU%20District%20Pricing">Contact sales</a>
+      </article>
+    </section>
+
+    <p class="fine-print">
+      Need something special (separate database, custom export, or PO payments)? <a href="mailto:you@qr4ppu.com">Talk to us</a>.
+    </p>
   </main>
 
   <footer class="container">
