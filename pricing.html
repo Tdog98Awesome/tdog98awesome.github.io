@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Pricing – QR4PPU</title>
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <header>
+    <nav class="container">
+      <a href="index.html" class="logo">QR4PPU</a>
+      <ul>
+        <li><a href="about.html">About</a></li>
+        <li><a href="pricing.html" class="active">Pricing</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <h1>Pricing</h1>
+    <table class="pricing">
+      <thead>
+        <tr><th>Plan</th><th>Includes</th><th>Price</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Class Pilot</td>
+          <td>1 class, 1 teacher, up to 2,000 scans/mo</td>
+          <td>$0</td>
+        </tr>
+        <tr>
+          <td>School</td>
+          <td>Unlimited teachers, dashboards, priority support</td>
+          <td>$49/mo</td>
+        </tr>
+        <tr>
+          <td>District</td>
+          <td>Multi-school reporting, custom options</td>
+          <td>Contact us</td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="small">Need something custom? <a href="mailto:you@qr4ppu.com">Contact us</a>.</p>
+  </main>
+
+  <footer class="container">
+    <p>© <span id="year"></span> QR4PPU</p>
+  </footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
