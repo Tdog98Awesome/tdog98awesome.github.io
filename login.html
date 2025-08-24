@@ -1,0 +1,57 @@
+<!DOCTYPE html><html lang="en"><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Login – QR4PPU</title>
+<link rel="stylesheet" href="assets/styles.css">
+<body class="container">
+  <h1>Login</h1>
+  <form id="login-form">
+    <input name="email" type="email" placeholder="Email" required>
+    <input name="password" type="password" placeholder="Password" required>
+    <div style="display:flex; gap:.5rem; margin:.5rem 0;">
+      <button type="submit" name="signin">Sign in</button>
+      <button type="submit" name="signup">Create account</button>
+      <button type="button" id="google-btn">Google</button>
+    </div>
+  </form>
+  <button id="logout-btn" hidden>Log out</button>
+
+  <script type="module">
+    import { auth } from "./assets/app.js";
+    import { onAuthStateChanged, signInWithEmailAndPassword,
+             createUserWithEmailAndPassword, GoogleAuthProvider,
+             signInWithPopup, signOut } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+
+    const f = document.getElementById("login-form");
+    const logoutBtn = document.getElementById("logout-btn");
+    const googleBtn = document.getElementById("google-btn");
+
+    f.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const email = e.target.email.value.trim();
+      const pass = e.target.password.value;
+      try {
+        if (e.submitter?.name === "signup") {
+          await createUserWithEmailAndPassword(auth, email, pass);
+        } else {
+          await signInWithEmailAndPassword(auth, email, pass);
+        }
+        e.target.reset();
+      } catch (err) {
+        alert(err.message);
+      }
+    });
+
+    googleBtn.addEventListener("click", async () => {
+      try {
+        await signInWithPopup(auth, new GoogleAuthProvider());
+      } catch (err) { alert(err.message); }
+    });
+
+    logoutBtn.addEventListener("click", () => signOut(auth));
+
+    onAuthStateChanged(auth, (user) => {
+      document.body.classList.toggle("authed", !!user);
+      logoutBtn.hidden = !user;
+    });
+  </script>
+</body></html>
