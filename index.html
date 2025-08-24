@@ -25,6 +25,28 @@
       <a class="btn" href="pricing.html">See Pricing</a>
     </section>
   </main>
+  <!-- Put this near the end of <body> -->
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+  import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+  import { getFirestore } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyAHbhvGxbQHBwqnkSDv6udZZRK1WHYcCjg",
+    authDomain: "qr4ppu.firebaseapp.com",
+    projectId: "qr4ppu",
+    appId: "1:192397137998:web:4b2a840dc36d1a36608b1f"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+  const db = getFirestore(app);
+
+  onAuthStateChanged(auth, (user) => {
+    console.log("auth state:", user ? "SIGNED IN" : "SIGNED OUT");
+  });
+</script>
+
 
   <footer class="container">
     <p>© <span id="year"></span> QR4PPU • Built with GitHub Pages</p>
